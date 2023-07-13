@@ -27,9 +27,12 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="textField3" min="-2" pref="247" max="-2" attributes="0"/>
-                  <Component id="textField2" alignment="0" min="-2" pref="247" max="-2" attributes="0"/>
+                  <Component id="textField2" min="-2" pref="247" max="-2" attributes="0"/>
+                  <Component id="scrollBar2" min="-2" pref="262" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="147" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="32767" attributes="0"/>
+              <Component id="scrollBar1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="121" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -37,10 +40,17 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="textField3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="textField2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="192" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="scrollBar1" min="-2" pref="117" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="textField3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="textField2" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="scrollBar2" min="-2" pref="6" max="-2" attributes="0"/>
+              <EmptySpace pref="153" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,6 +71,16 @@
       </Properties>
     </Component>
     <Component class="com.rmr.converter.swing.TextField" name="textField3">
+    </Component>
+    <Component class="com.rmr.converter.swing.scrollbar.ScrollBar" name="scrollBar1">
+    </Component>
+    <Component class="com.rmr.converter.swing.scrollbar.ScrollBar" name="scrollBar2">
+      <Properties>
+        <Property name="orientation" type="int" value="0"/>
+        <Property name="thumbColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="cc" red="33" type="rgb"/>
+        </Property>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -30,6 +30,8 @@ public class Test extends javax.swing.JFrame {
 
         textField2 = new com.rmr.converter.swing.TextField();
         textField3 = new com.rmr.converter.swing.TextField();
+        scrollBar1 = new com.rmr.converter.swing.scrollbar.ScrollBar();
+        scrollBar2 = new com.rmr.converter.swing.scrollbar.ScrollBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -37,6 +39,9 @@ public class Test extends javax.swing.JFrame {
         textField2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         textField2.setLinkedActiveAndSelectedColor(false);
         textField2.setSelectionColor(new java.awt.Color(102, 204, 0));
+
+        scrollBar2.setOrientation(javax.swing.JScrollBar.HORIZONTAL);
+        scrollBar2.setThumbColor(new java.awt.Color(51, 204, 0));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,17 +51,25 @@ public class Test extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(147, Short.MAX_VALUE))
+                    .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(scrollBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(scrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(192, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(scrollBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addComponent(scrollBar2, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(153, Short.MAX_VALUE))
         );
 
         pack();
@@ -102,6 +115,8 @@ public class Test extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private com.rmr.converter.swing.scrollbar.ScrollBar scrollBar1;
+    private com.rmr.converter.swing.scrollbar.ScrollBar scrollBar2;
     private com.rmr.converter.swing.TextField textField2;
     private com.rmr.converter.swing.TextField textField3;
     // End of variables declaration//GEN-END:variables
