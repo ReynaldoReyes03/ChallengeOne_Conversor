@@ -32,7 +32,7 @@ public class TextField extends JTextField {
     private boolean linkedActiveAndSelectedColor = true;
     private boolean animateHintText = true;
     private boolean show;
-    private boolean mouseHover = false;
+    private boolean mouseOver = false;
     
     private String labelText = "Label";
     
@@ -91,13 +91,13 @@ public class TextField extends JTextField {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                mouseHover = true;
+                mouseOver = true;
                 repaint();
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                mouseHover = false;
+                mouseOver = false;
                 repaint();
             }
         });
@@ -156,7 +156,7 @@ public class TextField extends JTextField {
     private void createHintText(Graphics2D graphics2D) {
         Insets insets = getInsets();
         
-        Color labelColor = hasFocus() || mouseHover ? activeColor : normalColor;
+        Color labelColor = hasFocus() || mouseOver ? activeColor : normalColor;
         
         graphics2D.setColor(labelColor);
         
@@ -202,7 +202,7 @@ public class TextField extends JTextField {
         
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
-        graphics2D.setColor(mouseHover ? activeColor : normalColor);
+        graphics2D.setColor(mouseOver ? activeColor : normalColor);
         graphics2D.fillRect(2, getHeight() - 1, getWidth() - 4, 1);
         
         createHintText(graphics2D);

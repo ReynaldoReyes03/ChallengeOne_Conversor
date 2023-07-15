@@ -47,7 +47,7 @@ public class ComboBoxUI extends BasicComboBoxUI {
     private float location;
     
     private boolean show = true;
-    private boolean mouseHover = false;
+    private boolean mouseOver = false;
 
     public ComboBoxUI(ComboBox comboBoxComponent) {
         this.comboBoxComponent = comboBoxComponent;
@@ -87,13 +87,13 @@ public class ComboBoxUI extends BasicComboBoxUI {
         comboBoxComponent.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                mouseHover = true;
+                mouseOver = true;
                 comboBoxComponent.repaint();
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
-                mouseHover = false;
+                mouseOver = false;
                 comboBoxComponent.repaint();
             }
         });
@@ -187,7 +187,7 @@ public class ComboBoxUI extends BasicComboBoxUI {
         double textYPosition = (height - fontBounds.getHeight()) / 2;
         double size = 18;
         
-        labelColor = hasFocus || mouseHover ? comboBoxComponent.getActiveColor() : comboBoxComponent.getNormalColor();
+        labelColor = hasFocus || mouseOver ? comboBoxComponent.getActiveColor() : comboBoxComponent.getNormalColor();
         
         graphics2D.setColor(labelColor);
         graphics2D.drawString(comboBoxComponent.getLabelText(), insets.left, (int) (insets.top + textYPosition + fontMetrics.getAscent() - size));
@@ -233,7 +233,7 @@ public class ComboBoxUI extends BasicComboBoxUI {
         
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);
-        graphics2D.setColor(mouseHover ? comboBoxComponent.getActiveColor() : comboBoxComponent.getNormalColor());
+        graphics2D.setColor(mouseOver ? comboBoxComponent.getActiveColor() : comboBoxComponent.getNormalColor());
         graphics2D.fillRect(2, height - 1, width - 4, 1);
         
         createLabel(graphics2D);
