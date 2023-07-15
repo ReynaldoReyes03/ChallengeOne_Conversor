@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  *
  * @author Reynaldo Martínez Reyes
  */
-public abstract class Regex {
+public class Regex {
 
     private static final Pattern integerPattern = Pattern.compile("^\\d+$");
     private static final Pattern signedIntegerPattern = Pattern.compile("^[+-]?\\d+$");

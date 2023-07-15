@@ -54,5 +54,4 @@ public class ComboBoxPopup extends BasicComboPopup {
     }
     // </editor-fold>
 
-    
 }
