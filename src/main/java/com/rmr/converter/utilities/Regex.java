@@ -9,45 +9,45 @@ import java.util.regex.Pattern;
  */
 public class Regex {
 
-    private static final Pattern integerPattern = Pattern.compile("^\\d+$");
-    private static final Pattern signedIntegerPattern = Pattern.compile("^[+-]?\\d+$");
-    private static final Pattern decimalPattern = Pattern.compile("^\\d*\\.\\d*$");
-    private static final Pattern signalDecimalPattern = Pattern.compile("^[+-]?\\d*\\.\\d*$");
-    private static final Pattern scientificNotationPattern = Pattern.compile("\\d*(\\.\\d+)?([Ee][+-]?\\d+)?");
-    private static final Pattern signedScientificNotationPattern = Pattern.compile("[+-]?\\d*(\\.\\d+)?([Ee][+-]?\\d+)?");
+    private static final Pattern INTEGER__PATTERN = Pattern.compile("^\\d+$");
+    private static final Pattern SIGNED_INTEGER__PATTERN = Pattern.compile("^[+-]?\\d+$");
+    private static final Pattern DECIMAL_PATTERN = Pattern.compile("^\\d*\\.\\d*$");
+    private static final Pattern SIGNED_DECIMAL_PATTERN = Pattern.compile("^[+-]?\\d*\\.\\d*$");
+    private static final Pattern SCIENTIFIC_NOTATION_PATTERN = Pattern.compile("\\d*(\\.\\d+)?([Ee][+-]?\\d+)?");
+    private static final Pattern SIGNED_SCIENTIFIC_NOTATION_PATTERN = Pattern.compile("[+-]?\\d*(\\.\\d+)?([Ee][+-]?\\d+)?");
     
     public static boolean validateInteger(String value) {
-        final Matcher matcher = integerPattern.matcher(value);
+        final Matcher matcher = INTEGER__PATTERN.matcher(value);
         
         return matcher.matches();
     }
     
     public static boolean validateSignedInteger(String value) {
-        final Matcher matcher = signedIntegerPattern.matcher(value);
+        final Matcher matcher = SIGNED_INTEGER__PATTERN.matcher(value);
         
         return matcher.matches();
     }
 
     public static boolean validateDecimalNumber(String value) {
-        final Matcher matcher = decimalPattern.matcher(value);
+        final Matcher matcher = DECIMAL_PATTERN.matcher(value);
 
         return matcher.matches();
     }
 
     public static boolean validateSignedDecimalNumber(String value) {
-        final Matcher matcher = signalDecimalPattern.matcher(value);
+        final Matcher matcher = SIGNED_DECIMAL_PATTERN.matcher(value);
 
         return matcher.matches();
     }
 
     public static boolean validateScientificNotation(String value) {
-        final Matcher matcher = scientificNotationPattern.matcher(value);
+        final Matcher matcher = SCIENTIFIC_NOTATION_PATTERN.matcher(value);
 
         return matcher.matches();
     }
 
     public static boolean validateSignedScientificNotation(String value) {
-        final Matcher matcher = signedScientificNotationPattern.matcher(value);
+        final Matcher matcher = SIGNED_SCIENTIFIC_NOTATION_PATTERN.matcher(value);
 
         return matcher.matches();
     }

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.rmr.converter.main;
 
 import com.rmr.converter.components.MainPanel;
@@ -44,8 +40,8 @@ public class App extends JFrame {
     
     private boolean menuShow;
     
-    private Color gradientColor1 = new Color(185, 161, 255);
-    private Color gradientColor2 = new Color(151, 20, 255);
+    private Color gradientColor1 = new Color(19, 226, 218);
+    private Color gradientColor2 = new Color(144, 85, 255);
     
     public App() {
         initComponents();

@@ -3,7 +3,7 @@ package com.rmr.converter.components;
 import com.rmr.converter.events.EventMenuSelected;
 import com.rmr.converter.models.ModelMenu;
 import com.rmr.converter.swing.MenuItem;
-import com.rmr.converter.swing.button.ButtonCustom;
+import com.rmr.converter.swing.buttons.ButtonCustom;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Cursor;

@@ -1,5 +1,6 @@
-package com.rmr.converter.swing.button;
+package com.rmr.converter.swing.buttons;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Graphics;
@@ -14,7 +15,7 @@ import javax.swing.JButton;
 public class ButtonCustom extends JButton {
     
     public ButtonCustom() {
-        setBackground(new Color(103, 58, 140));
+        setBackground(new Color(255, 255, 255));
         setContentAreaFilled(false);
         setCursor(new Cursor(Cursor.HAND_CURSOR));
     }
@@ -26,7 +27,9 @@ public class ButtonCustom extends JButton {
         
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         graphics2D.setColor(getBackground());
+        graphics2D.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.175f));
         graphics2D.fillRoundRect(10, 10, getWidth() - 20, getHeight() - 20, 20, 20);
+        graphics2D.setComposite(AlphaComposite.SrcOver);
         
         super.paintComponent(g);
     }

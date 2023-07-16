@@ -28,7 +28,7 @@ public class MenuItem extends JPanel {
     private boolean selected;
     private boolean mouseOver;
     
-    private Color selectedColor = new Color(151, 20, 255);
+    private Color selectedColor = new Color(255, 255, 255);
     private Color selectedBorderColor = new Color(245, 245, 245);
     
     public MenuItem(Icon icon, String name, int index, boolean selected) {
@@ -102,6 +102,7 @@ public class MenuItem extends JPanel {
         graphics2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         
         graphics2D.setColor(selectedColor);
+        graphics2D.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.175f));
         graphics2D.fillRect(0, 0, getWidth(), getHeight());
         
         graphics2D.setColor(selectedBorderColor);

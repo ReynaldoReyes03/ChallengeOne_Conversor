@@ -18,6 +18,8 @@ public class AboutView extends JPanel {
 
         jLabel1 = new javax.swing.JLabel();
 
+        setOpaque(false);
+
         jLabel1.setText("ABOUT");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
