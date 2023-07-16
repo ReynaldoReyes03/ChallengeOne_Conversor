@@ -3,12 +3,13 @@ package com.rmr.converter.components;
 import com.rmr.converter.models.ModelChildForm;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Reynaldo Martínez Reyes
  */
-public class MainPanel extends javax.swing.JPanel {
+public class MainPanel extends JPanel {
 
     public MainPanel() {
         initComponents();
@@ -27,13 +28,15 @@ public class MainPanel extends javax.swing.JPanel {
     }
     
     public void showForm(ModelChildForm form) {
-        form.getComponent().setSize(panel_main.getSize());
-        form.getComponent().setLocation(0, 0);
+        form.getController().init();
+        
+        form.getView().setSize(panel_main.getSize());
+        form.getView().setLocation(0, 0);
         
         label_title.setText(form.getTitle());
         
         panel_main.removeAll();
-        panel_main.add(form.getComponent(), BorderLayout.CENTER);
+        panel_main.add(form.getView(), BorderLayout.CENTER);
         panel_main.revalidate();
         panel_main.repaint();
     }
@@ -46,8 +49,9 @@ public class MainPanel extends javax.swing.JPanel {
         label_title = new javax.swing.JLabel();
         panel_main = new javax.swing.JPanel();
 
-        label_title.setBackground(new java.awt.Color(245, 245, 245));
+        label_title.setBackground(new java.awt.Color(255, 255, 255));
         label_title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        label_title.setForeground(new java.awt.Color(245, 245, 245));
         label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_title.setText("Form Title");
 

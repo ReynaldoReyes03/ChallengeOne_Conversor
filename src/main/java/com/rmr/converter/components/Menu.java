@@ -85,12 +85,12 @@ public class Menu extends JPanel {
         button_menu.setBorder(new EmptyBorder(5, 12, 5, 12));
         button_menu.setContentAreaFilled(false);
         button_menu.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        button_menu.setIcon(null);
+        button_menu.setIcon(new ImageIcon(getClass().getResource("/icons/menu-open.png")));
     }
     
     private void createButtonExit() {
         button_exit = new ButtonCustom();
-        button_exit.setIcon(null);
+        button_exit.setIcon(new ImageIcon(getClass().getResource("/icons/exit.png")));
     }
     
     public void setMenuButtonIcon(ImageIcon icon) {

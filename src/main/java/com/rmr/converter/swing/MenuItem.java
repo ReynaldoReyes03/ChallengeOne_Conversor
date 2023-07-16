@@ -120,6 +120,7 @@ public class MenuItem extends JPanel {
         label_icon.setPreferredSize(new java.awt.Dimension(30, 30));
 
         label_name.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        label_name.setForeground(new java.awt.Color(245, 245, 245));
         label_name.setText("MENU NAME");
         label_name.setPreferredSize(new java.awt.Dimension(37, 30));
 

@@ -6,10 +6,22 @@ package com.rmr.converter.main;
 
 import com.rmr.converter.components.MainPanel;
 import com.rmr.converter.components.Menu;
+import com.rmr.converter.controllers.AboutController;
+import com.rmr.converter.controllers.CurrencyController;
+import com.rmr.converter.controllers.HomeController;
+import com.rmr.converter.controllers.LengthController;
+import com.rmr.converter.controllers.TemperatureController;
+import com.rmr.converter.models.ModelChildForm;
 import com.rmr.converter.models.ModelMenu;
+import com.rmr.converter.views.AboutView;
+import com.rmr.converter.views.CurrencyView;
+import com.rmr.converter.views.HomeView;
+import com.rmr.converter.views.LengthView;
+import com.rmr.converter.views.TemperatureView;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
 import org.jdesktop.animation.timing.Animator;
 import org.jdesktop.animation.timing.TimingTarget;
@@ -28,6 +40,7 @@ public class App extends JFrame {
     private Animator animator;
     
     private int animationDuration = 550;
+    private int currentSelectedButton = 0;
     
     private boolean menuShow;
     
@@ -51,6 +64,9 @@ public class App extends JFrame {
         body.setLayout(layout);
         body.add(menu, "w 50!");
         body.add(mainPanel, "w 100%");
+        
+        JPanel view = new HomeView();
+        mainPanel.showForm(new ModelChildForm(view, new HomeController((HomeView) view), "Home"));
     }
     
     private void initMenu() {
@@ -58,14 +74,36 @@ public class App extends JFrame {
         menu.addEventExit(e -> System.exit(0));
         
         menu.setEvent(index -> {
-            System.out.println("Menu " + index + " selected.");
+            if (currentSelectedButton == index) return;
+            
+            currentSelectedButton = index;
             
             switch (index) {
-                case 0 -> System.out.println("Button 0");
-                case 1 -> System.out.println("Button 1");
-                case 2 -> System.out.println("Button 2");
-                case 3 -> System.out.println("Button 3");
-                case 4 -> System.out.println("Button 4");
+                case 0 -> {
+                    JPanel view = new HomeView();
+                    mainPanel.showForm(new ModelChildForm(view, new HomeController((HomeView) view), "Home"));
+                }
+                
+                case 1 -> {
+                    JPanel view = new CurrencyView();
+                    mainPanel.showForm(new ModelChildForm(view, new CurrencyController((CurrencyView) view), "Currency"));
+                }
+                
+                case 2 -> {
+                    JPanel view = new TemperatureView();
+                    mainPanel.showForm(new ModelChildForm(view, new TemperatureController((TemperatureView) view), "Temperature"));
+                }
+                
+                case 3 -> {
+                    JPanel view = new LengthView();
+                    mainPanel.showForm(new ModelChildForm(view, new LengthController((LengthView) view), "Length"));
+                }
+                
+                case 4 -> {
+                    JPanel view = new AboutView();
+                    mainPanel.showForm(new ModelChildForm(view, new AboutController((AboutView) view), "About"));
+                }
+                
                 default -> throw new AssertionError();
             }
         });
@@ -108,6 +146,7 @@ public class App extends JFrame {
     private void configureColors() {
         menu.setMenuGradientColors(gradientColor1, gradientColor2);
         mainPanel.setHeaderGradientColor(gradientColor1, gradientColor2);
+        mainPanel.setMenuHeight(getHeight());
     }
 
     @SuppressWarnings("unchecked")
@@ -117,6 +156,7 @@ public class App extends JFrame {
         body = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         body.setBackground(new java.awt.Color(245, 245, 245));
 
@@ -124,11 +164,11 @@ public class App extends JFrame {
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 448, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -143,6 +183,7 @@ public class App extends JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
