@@ -3,12 +3,13 @@ package com.rmr.converter.components;
 import java.awt.AlphaComposite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Reynaldo Martínez Reyes
  */
-public class Header extends javax.swing.JPanel {
+public class Header extends JPanel {
     
     private float alpha;
 

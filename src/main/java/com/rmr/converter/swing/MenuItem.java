@@ -12,13 +12,14 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.Icon;
+import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 /**
  *
  * @author Reynaldo Martínez Reyes
  */
-public class MenuItem extends javax.swing.JPanel {
+public class MenuItem extends JPanel {
 
     private final List<EventMenuSelected> events = new ArrayList<>();
     
@@ -83,7 +84,7 @@ public class MenuItem extends javax.swing.JPanel {
         });
     }
     
-    private void addEvent(EventMenuSelected event) {
+    public void addEvent(EventMenuSelected event) {
         events.add(event);
     }
     
