@@ -34,8 +34,8 @@ public class Menu extends JPanel {
     private Header header;
     private EventMenuSelected event;
     
-    private Color gradientColor1 = new Color(144, 107, 255);
-    private Color gradientColor2 = new Color(151, 20, 255);
+    private Color gradientColor1;
+    private Color gradientColor2;
 
     public Menu() {
         initComponents();
@@ -62,7 +62,7 @@ public class Menu extends JPanel {
         add(panelMenu);
     }
     
-    private void addMenu(ModelMenu menu) {
+    public void addMenu(ModelMenu menu) {
         MenuItem menuItem = new MenuItem(menu.getIcon(), menu.getMenuName(), panelMenu.getComponentCount(), menu.isSelected());
         
         menuItem.addEvent(this::clearMenu);
@@ -93,7 +93,7 @@ public class Menu extends JPanel {
         button_exit.setIcon(null);
     }
     
-    public void addMenuButtonIcon(ImageIcon icon) {
+    public void setMenuButtonIcon(ImageIcon icon) {
         button_menu.setIcon(icon);
     }
     
@@ -103,6 +103,10 @@ public class Menu extends JPanel {
     
     public void addEventExit(ActionListener event) {
         button_exit.addActionListener(event);
+    }
+    
+    public void setEvent(EventMenuSelected event) {
+        this.event = event;
     }
     
     public void setMenuGradientColors(Color gradientColor1, Color gradientColor2) {

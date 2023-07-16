@@ -46,6 +46,7 @@ public class MainPanel extends javax.swing.JPanel {
         label_title = new javax.swing.JLabel();
         panel_main = new javax.swing.JPanel();
 
+        label_title.setBackground(new java.awt.Color(245, 245, 245));
         label_title.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         label_title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_title.setText("Form Title");
