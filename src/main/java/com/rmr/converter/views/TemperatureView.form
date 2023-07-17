@@ -24,26 +24,26 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jLabel1" alignment="1" max="32767" attributes="0"/>
-          <Component id="jLabel2" alignment="0" max="32767" attributes="0"/>
+          <Component id="label_from" alignment="1" max="32767" attributes="0"/>
+          <Component id="label_to" alignment="0" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
-              <Component id="roundedButton1" pref="165" max="32767" attributes="0"/>
+              <Component id="button_convert" pref="165" max="32767" attributes="0"/>
               <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jLabel3" alignment="1" max="32767" attributes="0"/>
+                  <Component id="label_info" alignment="1" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="textField1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textfield_value" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="comboBox1" pref="176" max="32767" attributes="0"/>
+                              <Component id="comboBox_from" pref="176" max="32767" attributes="0"/>
                               <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                              <Component id="buttonCustom1" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="button_swap" min="-2" pref="40" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="comboBox2" pref="176" max="32767" attributes="0"/>
+                              <Component id="comboBox_to" pref="176" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -56,29 +56,31 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-              <Component id="textField1" min="-2" pref="46" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="comboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="comboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" alignment="3" attributes="0">
+              <Component id="textfield_value" min="-2" pref="46" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" max="-2" attributes="0"/>
-                      <Component id="buttonCustom1" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="button_swap" min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="comboBox_from" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="comboBox_to" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-              <Component id="roundedButton1" min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="button_convert" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="label_from" min="-2" pref="16" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="label_to" min="-2" pref="20" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-              <Component id="jLabel3" min="-2" pref="16" max="-2" attributes="0"/>
+              <Component id="label_info" min="-2" pref="16" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="com.rmr.converter.swing.combobox.ComboBox" name="comboBox1">
+    <Component class="com.rmr.converter.swing.combobox.ComboBox" name="comboBox_from">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -96,8 +98,11 @@
         <Property name="labelText" type="java.lang.String" value="From"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="label_from">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="55" red="90" type="rgb"/>
@@ -105,8 +110,11 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="? Kelvin"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="com.rmr.converter.swing.combobox.ComboBox" name="comboBox2">
+    <Component class="com.rmr.converter.swing.combobox.ComboBox" name="comboBox_to">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
@@ -121,11 +129,14 @@
             <StringItem index="5" value="Select"/>
           </StringArray>
         </Property>
-        <Property name="labelText" type="java.lang.String" value="From"/>
+        <Property name="labelText" type="java.lang.String" value="To"/>
         <Property name="opaque" type="boolean" value="false"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="label_to">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Segoe UI" size="14" style="1"/>
@@ -136,38 +147,53 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="? Centigrades"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="com.rmr.converter.swing.buttons.ButtonCustom" name="buttonCustom1">
+    <Component class="com.rmr.converter.swing.buttons.ButtonCustom" name="button_swap">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="66" red="cc" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="buttonCustom1"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JLabel" name="label_info">
       <Properties>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="20" green="20" red="20" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="? K = ? &#xba;C"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="com.rmr.converter.swing.TextField" name="textField1">
+    <Component class="com.rmr.converter.swing.TextField" name="textfield_value">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f5" green="f5" red="f5" type="rgb"/>
         </Property>
         <Property name="labelText" type="java.lang.String" value="Enter amount"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
-    <Component class="com.rmr.converter.swing.buttons.RoundedButton" name="roundedButton1">
+    <Component class="com.rmr.converter.swing.buttons.RoundedButton" name="button_convert">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="55" red="90" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="roundedButton1"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
     </Component>
   </SubComponents>
 </Form>

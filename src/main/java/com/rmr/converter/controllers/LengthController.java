@@ -19,11 +19,11 @@ import java.awt.event.ItemListener;
 public class LengthController implements IController, ItemListener {
 
     private final LengthView view;
-    private final LengthModel lengthModel;
+    private final LengthModel model;
 
     public LengthController(LengthView view) {
         this.view = view;
-        this.lengthModel  = new LengthModel();
+        this.model  = new LengthModel();
     }
     
     @Override
@@ -34,8 +34,8 @@ public class LengthController implements IController, ItemListener {
         view.comboBox_from.addItemListener(this);
         view.comboBox_to.addItemListener(this);
         
-        view.comboBox_from.setModel(lengthModel.getLengthUnitsModel());
-        view.comboBox_to.setModel(lengthModel.getLengthUnitsModel());
+        view.comboBox_from.setModel(model.getLengthUnitsModel());
+        view.comboBox_to.setModel(model.getLengthUnitsModel());
         
         ComboBoxUtilities.verifyComboBoxes(view.comboBox_from, view.comboBox_to);
         
@@ -49,12 +49,12 @@ public class LengthController implements IController, ItemListener {
             LengthUnit from = (LengthUnit) view.comboBox_from.getSelectedItem();
             LengthUnit to = (LengthUnit) view.comboBox_to.getSelectedItem();
             
-            Length lengthConverted = lengthModel.convert(from, to, value);
-            Length lengthInfo = lengthModel.convert(from, to, "1");
+            Length lengthConverted = model.convert(from, to, value);
+            Length lengthInfo = model.convert(from, to, "1");
             
             view.label_from.setText(value + " " + from.getPluralName());
             view.label_to.setText(lengthConverted.toString());
-            view.label_info.setText(1 + " " + from.getSymbol() + " = " + lengthInfo);
+            view.label_info.setText(1 + " " + from.getSymbol() + " = " + lengthInfo.getValue() + " " + lengthInfo.getUnit().getSymbol());
         } else {
             System.err.println("Error");
         }

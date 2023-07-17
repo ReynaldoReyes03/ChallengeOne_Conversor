@@ -19,6 +19,10 @@ public abstract class Temperature {
         this.unit = unit;
     }
     
+    public Double getValue() {
+        return value;
+    }
+    
     public TemperatureUnit getUnit() {
         return unit;
     }
@@ -30,6 +34,8 @@ public abstract class Temperature {
     public abstract Kelvin toKelvin();
 
     @Override
-    public abstract String toString();
+    public String toString() {
+        return value + " " + unit.getSymbol();
+    }
     
 }

@@ -12,7 +12,7 @@ import javax.swing.DefaultComboBoxModel;
 public class LengthModel {
 
     public DefaultComboBoxModel getLengthUnitsModel() {
-        return new DefaultComboBoxModel<LengthUnit>(LengthUnit.values());
+        return new DefaultComboBoxModel<>(LengthUnit.values());
     }
 
     public Length convert(LengthUnit lengthFrom, LengthUnit lengtTo, String lengthValue) {

@@ -27,10 +27,5 @@ public class Celsius extends Temperature {
     public Kelvin toKelvin() {
         return new Kelvin(this.value + 273.15);
     }
-
-    @Override
-    public String toString() {
-        return this.value + " " + this.getUnit().getSymbol();
-    }
     
 }

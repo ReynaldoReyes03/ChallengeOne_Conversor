@@ -27,10 +27,5 @@ public class Kelvin extends Temperature {
     public Kelvin toKelvin() {
         return this;
     }
-
-    @Override
-    public String toString() {
-        return this.value + " " + this.getUnit().getSymbol();
-    }
     
 }
