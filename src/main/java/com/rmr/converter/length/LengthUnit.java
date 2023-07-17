@@ -49,7 +49,7 @@ public enum LengthUnit {
 
     @Override
     public String toString() {
-        return symbol + " - " + singularName;
+        return singularName;
     }
     
 }

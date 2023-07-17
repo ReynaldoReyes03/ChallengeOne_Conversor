@@ -20,7 +20,7 @@ public class LengthView extends JPanel {
         label_from = new javax.swing.JLabel();
         comboBox_to = new com.rmr.converter.swing.combobox.ComboBox();
         label_to = new javax.swing.JLabel();
-        button_switch = new com.rmr.converter.swing.buttons.ButtonCustom();
+        button_swap = new com.rmr.converter.swing.buttons.ButtonCustom();
         label_info = new javax.swing.JLabel();
         textfield_value = new com.rmr.converter.swing.TextField();
         button_convert = new com.rmr.converter.swing.buttons.RoundedButton();
@@ -29,7 +29,7 @@ public class LengthView extends JPanel {
         setOpaque(false);
 
         comboBox_from.setBackground(new java.awt.Color(245, 245, 245));
-        comboBox_from.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Select", "Select", "Select", "Select", "Select" }));
+        comboBox_from.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select 1", "Select 2", "Select 3", "Select 4", "Select 5", "Select 6" }));
         comboBox_from.setLabelText("From");
         comboBox_from.setOpaque(false);
 
@@ -47,8 +47,8 @@ public class LengthView extends JPanel {
         label_to.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         label_to.setText("100 Centimeters");
 
-        button_switch.setBackground(new java.awt.Color(204, 102, 255));
-        button_switch.setText("buttonCustom1");
+        button_swap.setBackground(new java.awt.Color(204, 102, 255));
+        button_swap.setText("buttonCustom1");
 
         label_info.setForeground(new java.awt.Color(32, 32, 32));
         label_info.setText("1 m = 100 cm");
@@ -57,7 +57,7 @@ public class LengthView extends JPanel {
         textfield_value.setLabelText("Enter amount");
 
         button_convert.setBackground(new java.awt.Color(144, 85, 255));
-        button_convert.setText("roundedButton1");
+        button_convert.setText("Convert");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -79,7 +79,7 @@ public class LengthView extends JPanel {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(comboBox_from, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                                 .addGap(10, 10, 10)
-                                .addComponent(button_switch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(button_swap, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(comboBox_to, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)))))
                 .addContainerGap())
@@ -89,12 +89,13 @@ public class LengthView extends JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(textfield_value, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(comboBox_from, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBox_to, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(button_switch, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(button_swap, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(comboBox_from, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(comboBox_to, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(12, 12, 12)
                 .addComponent(button_convert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -109,7 +110,7 @@ public class LengthView extends JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public com.rmr.converter.swing.buttons.RoundedButton button_convert;
-    public com.rmr.converter.swing.buttons.ButtonCustom button_switch;
+    public com.rmr.converter.swing.buttons.ButtonCustom button_swap;
     public com.rmr.converter.swing.combobox.ComboBox comboBox_from;
     public com.rmr.converter.swing.combobox.ComboBox comboBox_to;
     public javax.swing.JLabel label_from;

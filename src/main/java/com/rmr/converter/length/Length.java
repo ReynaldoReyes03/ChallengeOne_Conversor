@@ -21,6 +21,10 @@ public abstract class Length {
         this.value = Double.valueOf(value.toString());
         this.unit = unit;
     }
+
+    public Double getValue() {
+        return value;
+    }
     
     public LengthUnit getUnit() {
         return unit;
@@ -61,4 +65,10 @@ public abstract class Length {
     public abstract Fathom toFathom();
     
     public abstract Furlong toFurlong();
+
+    @Override
+    public String toString() {
+        return value + " " + (value == 1 ? unit.getSingularName() : unit.getPluralName());
+    }
+    
 }
