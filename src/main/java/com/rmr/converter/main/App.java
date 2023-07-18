@@ -10,12 +10,15 @@ import com.rmr.converter.controllers.TemperatureController;
 import com.rmr.converter.models.CurrencyModel;
 import com.rmr.converter.models.ModelChildForm;
 import com.rmr.converter.models.ModelMenu;
+import com.rmr.converter.utilities.Gradient;
 import com.rmr.converter.views.AboutView;
 import com.rmr.converter.views.CurrencyView;
 import com.rmr.converter.views.HomeView;
 import com.rmr.converter.views.LengthView;
 import com.rmr.converter.views.TemperatureView;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -45,6 +48,9 @@ public class App extends JFrame {
     private Color gradientColor2 = new Color(144, 85, 255);
     
     public App() {
+        setUndecorated(true);
+        setShape(new RoundRectangle2D.Double(0, 0, 720, 400, 20, 20));
+        
         initComponents();
         init();
     }
@@ -53,8 +59,6 @@ public class App extends JFrame {
         CurrencyModel.loadAPIResponse();
         
         layout = new MigLayout("fill", "0[]0[]0", "0[fill]0");
-        
-        mainPanel.setMenuHeight(getHeight());
         
         initMenu();
         initAnimator();
@@ -143,9 +147,16 @@ public class App extends JFrame {
     }
     
     private void configureColors() {
-        menu.setMenuGradientColors(gradientColor1, gradientColor2);
-        mainPanel.setHeaderGradientColor(gradientColor1, gradientColor2);
-        mainPanel.setMenuHeight(getHeight());
+        Gradient.height = getHeight();
+        Gradient.gradientColor1 = gradientColor1;
+        Gradient.gradientColor2 = gradientColor2;
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        configureColors();
+        
+        super.paint(g);
     }
 
     @SuppressWarnings("unchecked")
@@ -163,11 +174,11 @@ public class App extends JFrame {
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 720, Short.MAX_VALUE)
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 448, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -1,6 +1,7 @@
 package com.rmr.converter.controllers;
 
 import com.rmr.converter.interfaces.IController;
+import com.rmr.converter.interfaces.SimpleDocumentListener;
 import com.rmr.converter.models.TemperatureModel;
 import com.rmr.converter.swing.combobox.ComboBox;
 import com.rmr.converter.temperature.Temperature;
@@ -11,6 +12,7 @@ import com.rmr.converter.views.TemperatureView;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import javax.swing.event.DocumentEvent;
 
 /**
  *
@@ -28,6 +30,18 @@ public class TemperatureController implements IController, ItemListener {
     
     @Override
     public void init() {
+        view.textfield_value.getDocument().addDocumentListener((SimpleDocumentListener) (DocumentEvent documentEvent) -> {
+            String value = view.textfield_value.getText();
+            
+            if (value.equals("")) {
+                clearLabels("Your conversion will appear here");
+            } else if (value.trim().equals("") || !Regex.validateSignedScientificNotation(value)) {
+                clearLabels("Invalid value to convert");
+            } else {
+                clearLabels("Your conversion will appear here");
+            }
+        });
+        
         view.button_convert.addActionListener(this::convertTemperature);
         view.button_swap.addActionListener(this::swapValues);
         
@@ -39,7 +53,7 @@ public class TemperatureController implements IController, ItemListener {
         
         ComboBoxUtilities.verifyComboBoxes(view.comboBox_from, view.comboBox_to);
         
-        clearLabels();
+        clearLabels("Your conversion will appear here");
     }
     
     private void convertTemperature(ActionEvent evt) {
@@ -52,24 +66,27 @@ public class TemperatureController implements IController, ItemListener {
             Temperature temperatureConverted = model.convert(from, to, value);
             Temperature temperatureInfo = model.convert(from, to, "1");
             
+            view.label_alert.setText("");
             view.label_from.setText(value + " " + from.getName());
             view.label_to.setText(temperatureConverted.toString());
             view.label_info.setText(1 + " " + from.getSymbol() + " = " + temperatureInfo.getValue() + " " + temperatureInfo.getUnit().getSymbol());
         } else {
-            System.err.println("Error");
+            clearLabels("Invalid value to convert");
         }
     }
     
     private void swapValues(ActionEvent evt) {
         ComboBoxUtilities.swapValues(view.comboBox_from, view.comboBox_to);
+        clearLabels("Your conversion will appear here");
     }
     
-    private void clearLabels() {
+    private void clearLabels(String alert) {
         view.label_from.setText("");
         view.label_to.setText("");
         view.label_info.setText("");
+        
+        view.label_alert.setText(alert);
     }
-
     
     // <editor-fold defaultstate="collapsed" desc="Override methods">
     @Override
@@ -85,7 +102,7 @@ public class TemperatureController implements IController, ItemListener {
                 ComboBoxUtilities.verifyComboBoxes(view.comboBox_to, view.comboBox_from);
             }
             
-            clearLabels();
+            clearLabels("Your conversion will appear here");
         }
     }
     // </editor-fold>

@@ -4,7 +4,7 @@ import com.rmr.converter.events.EventMenuSelected;
 import com.rmr.converter.models.ModelMenu;
 import com.rmr.converter.swing.MenuItem;
 import com.rmr.converter.swing.buttons.ButtonCustom;
-import java.awt.Color;
+import com.rmr.converter.utilities.Gradient;
 import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.GradientPaint;
@@ -33,9 +33,6 @@ public class Menu extends JPanel {
     
     private Header header;
     private EventMenuSelected event;
-    
-    private Color gradientColor1;
-    private Color gradientColor2;
 
     public Menu() {
         initComponents();
@@ -109,11 +106,6 @@ public class Menu extends JPanel {
         this.event = event;
     }
     
-    public void setMenuGradientColors(Color gradientColor1, Color gradientColor2) {
-        this.gradientColor1 = gradientColor1;
-        this.gradientColor2 = gradientColor2;
-    }
-    
     public void setAlpha(float alpha) {
         header.setAlpha(alpha);
     }
@@ -122,7 +114,7 @@ public class Menu extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         Graphics2D graphics2D = (Graphics2D) g;
-        GradientPaint gradient = new GradientPaint(0, 0, gradientColor1, 0, getHeight(), gradientColor2);
+        GradientPaint gradient = new GradientPaint(0, 0, Gradient.gradientColor1, 0, Gradient.height, Gradient.gradientColor2);
         
         graphics2D.setPaint(gradient);
         graphics2D.fillRect(0, 0, getWidth(), getHeight());

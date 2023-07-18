@@ -2,29 +2,50 @@ package com.rmr.converter.components;
 
 import com.rmr.converter.models.ModelChildForm;
 import java.awt.BorderLayout;
-import java.awt.Color;
+import java.awt.Point;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author Reynaldo Martínez Reyes
  */
 public class MainPanel extends JPanel {
-
+    
+    private int x;
+    private int y;
+    
     public MainPanel() {
         initComponents();
         
+        setDraggableFrame();
         setOpaque(false);
+        
         panel_main.setLayout(new BorderLayout());
     }
     
-    public void setMenuHeight(int height) {
-        panel_header.setMenuHeight(height);
-    }
-    
-    public void setHeaderGradientColor(Color gradientColor1, Color gradientColor2) {
-        panel_header.setGradientColor1(gradientColor1);
-        panel_header.setGradientColor2(gradientColor2);
+    private void setDraggableFrame() {
+        label_title.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                x = e.getX();
+                y = e.getY();
+            }
+        });
+        
+        label_title.addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                JFrame root = (JFrame) SwingUtilities.getRoot(label_title);
+                Point rootLocation = root.getLocation();
+                
+                root.setLocation(rootLocation.x + e.getX() - x, rootLocation.y + e.getY() - y);
+            }
+        });
     }
     
     public void showForm(ModelChildForm form) {
