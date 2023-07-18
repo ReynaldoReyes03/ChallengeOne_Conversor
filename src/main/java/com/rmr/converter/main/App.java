@@ -107,11 +107,11 @@ public class App extends JFrame {
             }
         });
         
-        menu.addMenu(new ModelMenu("Home", new ImageIcon(getClass().getResource("/icons/report.png")), true));
-        menu.addMenu(new ModelMenu("Currency", new ImageIcon(getClass().getResource("/icons/report.png"))));
-        menu.addMenu(new ModelMenu("Temperature", new ImageIcon(getClass().getResource("/icons/report.png"))));
-        menu.addMenu(new ModelMenu("Length", new ImageIcon(getClass().getResource("/icons/report.png"))));
-        menu.addMenu(new ModelMenu("About", new ImageIcon(getClass().getResource("/icons/report.png"))));
+        menu.addMenu(new ModelMenu("Home", new ImageIcon(getClass().getResource("/icons/home.png")), true));
+        menu.addMenu(new ModelMenu("Currency", new ImageIcon(getClass().getResource("/icons/currency.png"))));
+        menu.addMenu(new ModelMenu("Temperature", new ImageIcon(getClass().getResource("/icons/temperature.png"))));
+        menu.addMenu(new ModelMenu("Length", new ImageIcon(getClass().getResource("/icons/length.png"))));
+        menu.addMenu(new ModelMenu("About", new ImageIcon(getClass().getResource("/icons/about.png"))));
     }
     
     private void initAnimator() {
@@ -163,7 +163,7 @@ public class App extends JFrame {
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

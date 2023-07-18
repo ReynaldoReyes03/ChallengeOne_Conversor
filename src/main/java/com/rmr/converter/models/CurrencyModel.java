@@ -1,8 +1,10 @@
 package com.rmr.converter.models;
 
 import com.rmr.converter.currency.APIResponse;
+import com.rmr.converter.currency.Currency;
 import com.rmr.converter.currency.FetchExchangeRateAPI;
 import com.rmr.converter.currency.PairConversion;
+import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -18,7 +20,11 @@ public class CurrencyModel {
     }
     
     public DefaultComboBoxModel getCurrenciesModel() {
-        return new DefaultComboBoxModel<>(apiResponse.getSupportedCodes().toArray());
+        List<Currency> supportedCodes = apiResponse.getSupportedCodes();
+        
+        supportedCodes.sort((o1, o2) -> o1.compareTo(o2));
+        
+        return new DefaultComboBoxModel<>(supportedCodes.toArray());
     }
     
     public PairConversion pairConversion(String baseCode, String targetCode, String amount) {
