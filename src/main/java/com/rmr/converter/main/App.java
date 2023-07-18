@@ -7,6 +7,7 @@ import com.rmr.converter.controllers.CurrencyController;
 import com.rmr.converter.controllers.HomeController;
 import com.rmr.converter.controllers.LengthController;
 import com.rmr.converter.controllers.TemperatureController;
+import com.rmr.converter.models.CurrencyModel;
 import com.rmr.converter.models.ModelChildForm;
 import com.rmr.converter.models.ModelMenu;
 import com.rmr.converter.views.AboutView;
@@ -49,6 +50,8 @@ public class App extends JFrame {
     }
     
     private void init() {
+        CurrencyModel.loadAPIResponse();
+        
         layout = new MigLayout("fill", "0[]0[]0", "0[fill]0");
         
         mainPanel.setMenuHeight(getHeight());

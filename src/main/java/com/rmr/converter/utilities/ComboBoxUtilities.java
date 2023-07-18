@@ -29,4 +29,16 @@ public class ComboBoxUtilities {
             other.setSelectedIndex(nextItem);
         }
     }
+    
+    public static void verifyComboBoxesByIndex(JComboBox current, JComboBox other) {
+        int currentIndex = current.getSelectedIndex();        
+        int otherIndex = other.getSelectedIndex();
+        
+        if (currentIndex == otherIndex) {
+            int itemCount = other.getItemCount();
+            int nextItem = otherIndex == itemCount - 1 ? 0 : ++otherIndex;
+            
+            other.setSelectedIndex(nextItem);
+        }
+    }
 }

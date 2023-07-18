@@ -81,7 +81,7 @@ public class TemperatureController implements IController, ItemListener {
             
             if (source == view.comboBox_from) {
                 ComboBoxUtilities.verifyComboBoxes(view.comboBox_from, view.comboBox_to);
-            } else if (source == view.comboBox_from) {
+            } else if (source == view.comboBox_to) {
                 ComboBoxUtilities.verifyComboBoxes(view.comboBox_to, view.comboBox_from);
             }
             
