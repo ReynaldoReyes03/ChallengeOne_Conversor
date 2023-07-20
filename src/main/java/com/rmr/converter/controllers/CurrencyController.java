@@ -7,6 +7,7 @@ import com.rmr.converter.interfaces.SimpleDocumentListener;
 import com.rmr.converter.models.CurrencyModel;
 import com.rmr.converter.swing.combobox.ComboBox;
 import com.rmr.converter.utilities.ComboBoxUtilities;
+import com.rmr.converter.utilities.DateFormatter;
 import com.rmr.converter.utilities.FontLoader;
 import com.rmr.converter.utilities.Regex;
 import com.rmr.converter.views.CurrencyView;
@@ -97,8 +98,8 @@ public class CurrencyController implements IController, ItemListener {
             view.label_base.setText(value + " " + base.getName());
             view.label_result.setText(conversion.getConversionResult()+ " " + target.getName());
             view.label_description.setText(1 + " " + conversion.getBaseCode() + " = " + conversion.getConversionRate() + " " + conversion.getTargetCode());
-            view.label_lastUpdate.setText("Last update...");
-            view.label_nextUpdate.setText("Next update...");
+            view.label_lastUpdate.setText("Last update: " + DateFormatter.secondsTimeStampToHumanDate(conversion.getLastUpdate()));
+            view.label_nextUpdate.setText("Next update: " + DateFormatter.secondsTimeStampToHumanDate(conversion.getNextUpdate()));
         } else {
             clearLabels("Invalid value to convert");
         }

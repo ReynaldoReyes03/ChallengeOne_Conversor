@@ -23,6 +23,12 @@ public class PairConversion {
     @JsonProperty("conversion_result")
     private BigDecimal conversionResult;
     
+    @JsonProperty("time_last_update_unix")
+    private Long lastUpdate;
+    
+    @JsonProperty("time_next_update_unix")
+    private Long nextUpdate;
+    
     @JsonProperty("error-type")
     private String errorType;
 
@@ -64,6 +70,22 @@ public class PairConversion {
 
     public void setConversionResult(String conversionResult) {
         this.conversionResult = new BigDecimal(conversionResult);
+    }
+
+    public Long getLastUpdate() {
+        return lastUpdate;
+    }
+
+    public void setLastUpdate(String lastUpdate) {
+        this.lastUpdate = Long.valueOf(lastUpdate);
+    }
+
+    public Long getNextUpdate() {
+        return nextUpdate;
+    }
+
+    public void setNextUpdate(String nextUpdate) {
+        this.nextUpdate = Long.valueOf(nextUpdate);
     }
 
     public String getErrorType() {
