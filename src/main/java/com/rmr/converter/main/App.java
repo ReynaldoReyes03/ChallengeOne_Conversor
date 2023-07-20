@@ -17,6 +17,7 @@ import com.rmr.converter.views.HomeView;
 import com.rmr.converter.views.LengthView;
 import com.rmr.converter.views.TemperatureView;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
@@ -49,7 +50,8 @@ public class App extends JFrame {
     
     public App() {
         setUndecorated(true);
-        setShape(new RoundRectangle2D.Double(0, 0, 720, 400, 20, 20));
+        setShape(new RoundRectangle2D.Double(0, 0, 820, 480, 20, 20));
+        setPreferredSize(new Dimension(820, 480));
         
         initComponents();
         init();
@@ -70,6 +72,13 @@ public class App extends JFrame {
         
         JPanel view = new HomeView();
         mainPanel.showForm(new ModelChildForm(view, new HomeController((HomeView) view), "Home"));
+        
+        updateFont();
+    }
+    
+    public void updateFont() {
+        menu.updateFont();
+        mainPanel.updateFont();
     }
     
     private void initMenu() {
@@ -178,7 +187,7 @@ public class App extends JFrame {
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 480, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

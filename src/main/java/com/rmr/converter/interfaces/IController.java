@@ -8,4 +8,6 @@ public interface IController {
 
     void init();
     
+    void updateFont();
+    
 }

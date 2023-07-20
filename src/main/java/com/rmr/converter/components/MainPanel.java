@@ -1,6 +1,8 @@
 package com.rmr.converter.components;
 
+import com.rmr.converter.interfaces.IController;
 import com.rmr.converter.models.ModelChildForm;
+import com.rmr.converter.utilities.FontLoader;
 import java.awt.BorderLayout;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
@@ -19,6 +21,8 @@ public class MainPanel extends JPanel {
     private int x;
     private int y;
     
+    private IController currentController;
+    
     public MainPanel() {
         initComponents();
         
@@ -26,6 +30,11 @@ public class MainPanel extends JPanel {
         setOpaque(false);
         
         panel_main.setLayout(new BorderLayout());
+    }
+    
+    public void updateFont() {
+        label_title.setFont(FontLoader.getBoldBiggerFont());
+        currentController.updateFont();
     }
     
     private void setDraggableFrame() {
@@ -49,7 +58,10 @@ public class MainPanel extends JPanel {
     }
     
     public void showForm(ModelChildForm form) {
-        form.getController().init();
+        currentController = form.getController();
+        
+        currentController.init();
+        currentController.updateFont();
         
         form.getView().setSize(panel_main.getSize());
         form.getView().setLocation(0, 0);

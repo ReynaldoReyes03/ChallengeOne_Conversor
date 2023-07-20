@@ -11,26 +11,26 @@ public class CurrencyView extends JPanel {
     public CurrencyView() {
         initComponents();
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        textfield_value = new com.rmr.converter.swing.TextField();
         comboBox_from = new com.rmr.converter.swing.combobox.ComboBox();
         comboBox_to = new com.rmr.converter.swing.combobox.ComboBox();
-        button_convert = new com.rmr.converter.swing.buttons.RoundedButton();
-        label_from = new javax.swing.JLabel();
-        label_to = new javax.swing.JLabel();
-        label_info = new javax.swing.JLabel();
-        label_date = new javax.swing.JLabel();
+        textfield_value = new com.rmr.converter.swing.TextField();
         button_swap = new javax.swing.JButton();
+        button_convert = new com.rmr.converter.swing.buttons.GradientRoundedButton();
+        panel = new com.rmr.converter.swing.GradientRoundedPanel();
+        label_alert = new javax.swing.JLabel();
+        label_base = new javax.swing.JLabel();
+        label_result = new javax.swing.JLabel();
+        label_lastUpdate = new javax.swing.JLabel();
+        label_description = new javax.swing.JLabel();
+        label_nextUpdate = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         setOpaque(false);
-
-        textfield_value.setBackground(new java.awt.Color(245, 245, 245));
-        textfield_value.setLabelText("Enter amount");
 
         comboBox_from.setBackground(new java.awt.Color(245, 245, 245));
         comboBox_from.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select", "Select", "Select", "Select", "Select", "Select" }));
@@ -42,23 +42,8 @@ public class CurrencyView extends JPanel {
         comboBox_to.setLabelText("To");
         comboBox_to.setOpaque(false);
 
-        button_convert.setBackground(new java.awt.Color(144, 85, 255));
-        button_convert.setText("roundedButton1");
-
-        label_from.setForeground(new java.awt.Color(144, 85, 255));
-        label_from.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_from.setText("100 USD");
-
-        label_to.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        label_to.setForeground(new java.awt.Color(144, 85, 255));
-        label_to.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        label_to.setText("40000 COP");
-
-        label_info.setForeground(new java.awt.Color(32, 32, 32));
-        label_info.setText("1 USD = 4000 COP");
-
-        label_date.setForeground(new java.awt.Color(32, 32, 32));
-        label_date.setText("Last update: fecha de la última actualización UwU");
+        textfield_value.setBackground(new java.awt.Color(245, 245, 245));
+        textfield_value.setLabelText("Enter amount");
 
         button_swap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/swap.png"))); // NOI18N
         button_swap.setBorderPainted(false);
@@ -67,66 +52,119 @@ public class CurrencyView extends JPanel {
         button_swap.setFocusPainted(false);
         button_swap.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
+        button_convert.setText("CONVERT");
+        button_convert.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+
+        panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        label_alert.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        label_alert.setForeground(new java.awt.Color(255, 255, 255));
+        label_alert.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_alert.setText("Your text here.");
+
+        label_base.setForeground(new java.awt.Color(255, 255, 255));
+        label_base.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_base.setText("? COP");
+
+        label_result.setFont(new java.awt.Font("Segoe UI", 1, 17)); // NOI18N
+        label_result.setForeground(new java.awt.Color(255, 255, 255));
+        label_result.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_result.setText("? USD");
+
+        label_lastUpdate.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        label_lastUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        label_lastUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_lastUpdate.setText("Last update: March 20th 2023");
+        label_lastUpdate.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        label_description.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        label_description.setForeground(new java.awt.Color(255, 255, 255));
+        label_description.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_description.setText("? COP = ? USD");
+        label_description.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        label_nextUpdate.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        label_nextUpdate.setForeground(new java.awt.Color(255, 255, 255));
+        label_nextUpdate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_nextUpdate.setText("Next update: March 20th 2023");
+        label_nextUpdate.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(label_base, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_result, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_alert, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+            .addComponent(label_description, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_lastUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(label_nextUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
+                .addComponent(label_alert, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(label_base)
+                .addGap(0, 0, 0)
+                .addComponent(label_result, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(label_description, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(label_lastUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(label_nextUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(label_from, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(label_to, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(label_info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(textfield_value, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(comboBox_from, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(button_swap)
-                                .addGap(7, 7, 7)
-                                .addComponent(comboBox_to, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)))))
-                .addContainerGap())
-            .addComponent(label_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(textfield_value, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(112, 112, 112)
-                .addComponent(button_convert, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
-                .addGap(125, 125, 125))
+                .addComponent(comboBox_from, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                .addGap(9, 9, 9)
+                .addComponent(button_swap, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(comboBox_to, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE))
+            .addComponent(panel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(100, Short.MAX_VALUE)
+                .addComponent(button_convert, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(textfield_value, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(textfield_value, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(comboBox_from, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(comboBox_to, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(button_swap)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(button_swap))
+                    .addComponent(comboBox_to, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(40, 40, 40)
                 .addComponent(button_convert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(label_from, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(label_to, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(label_info, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(label_date, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
+                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public com.rmr.converter.swing.buttons.RoundedButton button_convert;
+    public com.rmr.converter.swing.buttons.GradientRoundedButton button_convert;
     public javax.swing.JButton button_swap;
     public com.rmr.converter.swing.combobox.ComboBox comboBox_from;
     public com.rmr.converter.swing.combobox.ComboBox comboBox_to;
-    public javax.swing.JLabel label_date;
-    public javax.swing.JLabel label_from;
-    public javax.swing.JLabel label_info;
-    public javax.swing.JLabel label_to;
+    public javax.swing.JLabel label_alert;
+    public javax.swing.JLabel label_base;
+    public javax.swing.JLabel label_description;
+    public javax.swing.JLabel label_lastUpdate;
+    public javax.swing.JLabel label_nextUpdate;
+    public javax.swing.JLabel label_result;
+    public com.rmr.converter.swing.GradientRoundedPanel panel;
     public com.rmr.converter.swing.TextField textfield_value;
     // End of variables declaration//GEN-END:variables
 }

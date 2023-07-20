@@ -32,7 +32,7 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="comboBox_to" pref="173" max="32767" attributes="0"/>
           </Group>
-          <Component id="gradientRoundedPanel1" max="32767" attributes="0"/>
+          <Component id="panel" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="100" max="32767" attributes="0"/>
               <Component id="button_convert" min="-2" pref="200" max="-2" attributes="0"/>
@@ -55,8 +55,8 @@
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="button_convert" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="57" max="32767" attributes="0"/>
-              <Component id="gradientRoundedPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <Component id="panel" min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -137,37 +137,46 @@
     <Component class="com.rmr.converter.swing.buttons.GradientRoundedButton" name="button_convert">
       <Properties>
         <Property name="text" type="java.lang.String" value="CONVERT"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="1"/>
+        </Property>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
     </Component>
-    <Container class="com.rmr.converter.swing.GradientRoundedPanel" name="gradientRoundedPanel1">
+    <Container class="com.rmr.converter.swing.GradientRoundedPanel" name="panel">
       <Properties>
-        <Property name="roundedValue" type="int" value="20"/>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
+            <EmptyBorder bottom="10" left="10" right="10" top="10"/>
+          </Border>
+        </Property>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="label_from" alignment="0" max="32767" attributes="0"/>
-              <Component id="label_to" alignment="1" max="32767" attributes="0"/>
-              <Component id="label_info" alignment="1" max="32767" attributes="0"/>
+              <Component id="label_base" alignment="0" max="32767" attributes="0"/>
+              <Component id="label_result" alignment="1" max="32767" attributes="0"/>
+              <Component id="label_description" alignment="1" max="32767" attributes="0"/>
               <Component id="label_alert" alignment="1" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="12" max="32767" attributes="0"/>
-                  <Component id="label_alert" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_alert" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="label_from" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_base" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="label_to" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Component id="label_info" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="label_result" min="-2" pref="22" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Component id="label_description" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -176,18 +185,19 @@
         <Component class="javax.swing.JLabel" name="label_alert">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
+              <Font name="Segoe UI" size="20" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="Your text here."/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_from">
+        <Component class="javax.swing.JLabel" name="label_base">
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -199,10 +209,10 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_to">
+        <Component class="javax.swing.JLabel" name="label_result">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="14" style="1"/>
+              <Font name="Segoe UI" size="17" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -214,13 +224,17 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JLabel" name="label_info">
+        <Component class="javax.swing.JLabel" name="label_description">
           <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="11" style="0"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="? K = ? &#xba;C"/>
+            <Property name="verticalAlignment" type="int" value="3"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

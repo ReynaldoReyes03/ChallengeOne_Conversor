@@ -7,6 +7,7 @@ import com.rmr.converter.swing.combobox.ComboBox;
 import com.rmr.converter.temperature.Temperature;
 import com.rmr.converter.temperature.TemperatureUnit;
 import com.rmr.converter.utilities.ComboBoxUtilities;
+import com.rmr.converter.utilities.FontLoader;
 import com.rmr.converter.utilities.Regex;
 import com.rmr.converter.views.TemperatureView;
 import java.awt.event.ActionEvent;
@@ -30,6 +31,25 @@ public class TemperatureController implements IController, ItemListener {
     
     @Override
     public void init() {
+        setTextFieldDocumentListener();
+        initButtons();
+        initComboBoxes();
+        clearLabels("Your conversion will appear here");
+    }
+
+    @Override
+    public void updateFont() {
+        view.textfield_value.setFont(FontLoader.getRegularMediumFont());
+        view.comboBox_from.setFont(FontLoader.getRegularMediumFont());
+        view.comboBox_to.setFont(FontLoader.getRegularMediumFont());
+        view.button_convert.setFont(FontLoader.getBoldSmallFont());
+        view.label_alert.setFont(FontLoader.getBoldBigFont());
+        view.label_base.setFont(FontLoader.getRegularMediumFont());
+        view.label_result.setFont(FontLoader.getBoldMediumFont());
+        view.label_description.setFont(FontLoader.getRegularSmallFont());
+    }
+    
+    private void setTextFieldDocumentListener() {
         view.textfield_value.getDocument().addDocumentListener((SimpleDocumentListener) (DocumentEvent documentEvent) -> {
             String value = view.textfield_value.getText();
             
@@ -41,10 +61,14 @@ public class TemperatureController implements IController, ItemListener {
                 clearLabels("Your conversion will appear here");
             }
         });
-        
+    }
+    
+    private void initButtons() {
         view.button_convert.addActionListener(this::convertTemperature);
         view.button_swap.addActionListener(this::swapValues);
-        
+    }
+    
+    private void initComboBoxes() {
         view.comboBox_from.addItemListener(this);
         view.comboBox_to.addItemListener(this);
         
@@ -52,8 +76,6 @@ public class TemperatureController implements IController, ItemListener {
         view.comboBox_to.setModel(model.getTemperataureUnitsModel());
         
         ComboBoxUtilities.verifyComboBoxes(view.comboBox_from, view.comboBox_to);
-        
-        clearLabels("Your conversion will appear here");
     }
     
     private void convertTemperature(ActionEvent evt) {
@@ -66,10 +88,11 @@ public class TemperatureController implements IController, ItemListener {
             Temperature temperatureConverted = model.convert(from, to, value);
             Temperature temperatureInfo = model.convert(from, to, "1");
             
-            view.label_alert.setText("");
-            view.label_from.setText(value + " " + from.getName());
-            view.label_to.setText(temperatureConverted.toString());
-            view.label_info.setText(1 + " " + from.getSymbol() + " = " + temperatureInfo.getValue() + " " + temperatureInfo.getUnit().getSymbol());
+            showLabels(true);
+            
+            view.label_base.setText(value + " " + from.getName());
+            view.label_result.setText(temperatureConverted.toString());
+            view.label_description.setText(1 + " " + from.getSymbol() + " = " + temperatureInfo.getValue() + " " + temperatureInfo.getUnit().getSymbol());
         } else {
             clearLabels("Invalid value to convert");
         }
@@ -81,11 +104,16 @@ public class TemperatureController implements IController, ItemListener {
     }
     
     private void clearLabels(String alert) {
-        view.label_from.setText("");
-        view.label_to.setText("");
-        view.label_info.setText("");
-        
         view.label_alert.setText(alert);
+        showLabels(false);
+    }
+    
+    private void showLabels(boolean active) {
+        view.label_base.setVisible(active);
+        view.label_result.setVisible(active);
+        view.label_description.setVisible(active);
+        
+        view.label_alert.setVisible(!active);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Override methods">

@@ -1,6 +1,7 @@
 package com.rmr.converter.swing;
 
 import com.rmr.converter.events.EventMenuSelected;
+import com.rmr.converter.utilities.FontLoader;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -90,6 +91,10 @@ public class MenuItem extends JPanel {
     
     private void runEvent() {
         events.forEach(event -> event.selected(index));
+    }
+    
+    public void updateFont() {
+        label_name.setFont(FontLoader.getBoldSmallFont());
     }
 
     // <editor-fold defaultstate="collapsed" desc="Override Methods">

@@ -23,6 +23,11 @@ public class HomeController implements IController, ActionListener {
     }
 
     @Override
+    public void updateFont() {
+        
+    }
+
+    @Override
     public void actionPerformed(ActionEvent e) {
         
     }

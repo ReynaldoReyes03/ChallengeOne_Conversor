@@ -94,6 +94,12 @@ public class Menu extends JPanel {
         button_menu.setIcon(icon);
     }
     
+    public void updateFont() {
+        for (Component component : panelMenu.getComponents()) ((MenuItem) component).updateFont();
+        
+        header.updateFont();
+    }
+    
     public void addEventMenu(ActionListener event) {
         button_menu.addActionListener(event);
     }
@@ -138,7 +144,6 @@ public class Menu extends JPanel {
             .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
