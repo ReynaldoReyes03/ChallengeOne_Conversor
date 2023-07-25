@@ -13,7 +13,7 @@ import javax.swing.text.StyleConstants;
  */
 public class HomeController implements IController {
     
-    private final String text = "This is a project of a course guided by ALURA Latam and by Oracle with its education program called ONE.\n\nThis system is developed in Java and uses the Java Swing library for the user interface. I hope you can use it in your day to day and that it will be useful when you need help when it comes to conversions between units.";
+    private final String text = "This is a project of a course guided by ALURA Latam and by Oracle with its education program called ONE. This system is developed in Java and uses the Java Swing library for the user interface. I hope you can use it in your day to day and that it will be useful when you need help when it comes to conversions between units.";
     
     public HomeView view;
 
@@ -27,7 +27,7 @@ public class HomeController implements IController {
     }
     
     private void initTextPane() {
-        view.textPane_text.setText("This is a project of a course guided by ALURA Latam and by Oracle with its education program called ONE. This system is developed in Java and uses the Java Swing library for the user interface. I hope you can use it in your day to day and that it will be useful when you need help when it comes to conversions between units.");
+        view.textPane_text.setText(text);
         
         updateTextPaneFont();
     }
