@@ -1,7 +1,7 @@
 package com.rmr.converter.controllers;
 
-import com.rmr.converter.currency.Currency;
-import com.rmr.converter.currency.PairConversion;
+import com.rmr.converter.currency.models.Currency;
+import com.rmr.converter.currency.models.PairConversion;
 import com.rmr.converter.interfaces.IController;
 import com.rmr.converter.interfaces.SimpleDocumentListener;
 import com.rmr.converter.models.CurrencyModel;

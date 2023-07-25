@@ -10,6 +10,7 @@ import com.rmr.converter.controllers.TemperatureController;
 import com.rmr.converter.models.CurrencyModel;
 import com.rmr.converter.models.ModelChildForm;
 import com.rmr.converter.models.ModelMenu;
+import com.rmr.converter.utilities.FontLoader;
 import com.rmr.converter.utilities.Gradient;
 import com.rmr.converter.views.AboutView;
 import com.rmr.converter.views.CurrencyView;
@@ -59,8 +60,12 @@ public class App extends JFrame {
     
     private void init() {
         CurrencyModel.loadAPIResponse();
+        FontLoader.loadMPLUSRounded1cFont();
         
         layout = new MigLayout("fill", "0[]0[]0", "0[fill]0");
+        
+        setIconImage(new ImageIcon(getClass().getResource("/images/icon-16.png")).getImage());
+        setTitle("Alura Converter");
         
         initMenu();
         initAnimator();
@@ -175,7 +180,6 @@ public class App extends JFrame {
         body = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
 
         body.setBackground(new java.awt.Color(245, 245, 245));
 
@@ -183,7 +187,7 @@ public class App extends JFrame {
         body.setLayout(bodyLayout);
         bodyLayout.setHorizontalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
+            .addGap(0, 820, Short.MAX_VALUE)
         );
         bodyLayout.setVerticalGroup(
             bodyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

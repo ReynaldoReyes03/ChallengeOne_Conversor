@@ -35,7 +35,7 @@ public abstract class Temperature {
 
     @Override
     public String toString() {
-        return value + " " + unit.getSymbol();
+        return value + " " + unit.getName();
     }
     
 }

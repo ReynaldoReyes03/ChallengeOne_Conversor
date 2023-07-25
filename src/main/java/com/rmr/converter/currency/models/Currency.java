@@ -1,4 +1,4 @@
-package com.rmr.converter.currency;
+package com.rmr.converter.currency.models;
 
 /**
  *

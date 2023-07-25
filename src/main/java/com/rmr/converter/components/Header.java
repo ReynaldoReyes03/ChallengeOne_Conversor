@@ -52,7 +52,7 @@ public class Header extends JPanel {
 
         label_title.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         label_title.setForeground(new java.awt.Color(255, 255, 255));
-        label_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/setting.png"))); // NOI18N
+        label_title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon-27.png"))); // NOI18N
         label_title.setText("Alura Converter");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

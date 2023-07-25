@@ -1,9 +1,9 @@
 package com.rmr.converter.models;
 
-import com.rmr.converter.currency.APIResponse;
-import com.rmr.converter.currency.Currency;
+import com.rmr.converter.currency.models.APIResponse;
+import com.rmr.converter.currency.models.Currency;
 import com.rmr.converter.currency.FetchExchangeRateAPI;
-import com.rmr.converter.currency.PairConversion;
+import com.rmr.converter.currency.models.PairConversion;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 
